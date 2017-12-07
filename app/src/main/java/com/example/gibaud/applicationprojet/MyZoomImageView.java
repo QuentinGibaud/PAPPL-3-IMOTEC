@@ -1,4 +1,3 @@
-//Utilisation du même package que pour le premier protocole
 package com.example.gibaud.applicationprojet;
 
 //Liste des imports

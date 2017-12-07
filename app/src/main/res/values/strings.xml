@@ -54,4 +54,10 @@
     <string name="mes_nom">Nom de la mesure à relever</string>
     <string name="mes_valeur">Valeur</string>
 
+    <string name="str_ckr">CKR en dehors de la zone normale (4,6 à 9,1)</string>
+    <string name="str_crtma">CRT-MA en dehors de la zone normale (52 à 70)</string>
+    <string name="str_crtly30">CRT-LY30 en dehors de la zone normale (inf. à 2,2)</string>
+    <string name="str_ckhepr">CK-Hep-R en dehors de la zone normale (4,3 à 8,3)</string>
+    <string name="str_cffma">CKR en dehors de la zone normale (15 à 32)</string>
+
 </resources>
