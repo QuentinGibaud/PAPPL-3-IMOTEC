@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">IMOTEC : Protocole TEG6</string>
+
+    <string name="btn_pre_operatoire">Per-opératoire</string>
+    <string name="btn_post_operatoire">Post-opératoire</string>
+    <string name="tv_periode">Choisir la période</string>
+
+    <string name="imotec"><![CDATA[Intérêt médico-économique de la thrombo-élastographie,\ndans le management transfusionnel\ndes hémorragies péri-opératoires\nde chirurgies cardiaques sous circulation extracorporelle]]></string>
+
+    <string name="tv_protamine">Protamine</string>
+    <string name="tv_title_resultat">"Propositions thérapeutiques : "</string>
+    <string name="tv_title_mesure">Mesures TEG6</string>
+    <string name="tv_ckr">CKR</string>
+    <string name="tv_crt_ma">CRT-MA</string>
+    <string name="tv_crt_ly30">CRT-LY30</string>
+    <string name="tv_ck_hep_r">CK-Hep-R</string>
+    <string name="tv_cff_ma">CFF-MA</string>
+
+    <string name="tv_title_corriger_et_traiter">Corriger et Traiter</string>
+
+    <string name="tv_transfusion_plaquettaire">Transfusion plaquettaire (1 MCP ou CPA)</string>
+    <string name="tv_fibrinogene">Fibrinogène (20 à 50 mg/kg)</string>
+    <string name="tv_plasma_ccp">Si besoin de remplissage, PLASMA (10 à 15 mL/kg), sinon CCP (PPSB, 12.5 UI/kg)</string>
+    <string name="tv_acide">Acide tranexamique (1-2 g)</string>
+    <string name="tv_tests_normaux">Tests normaux</string>
+    <string name="tv_tests_normaux_detail">Envisager exploration chirurgicale;\nEnvisager rFVIIa (Novoseven, 45-90µg/kg);\n(En deuxième intention, après au moins une exploration chirurgicale)</string>
+
+    <string name="tv_pre_operatoire"><![CDATA[-Saignement anormal (avis consensuel du chirurgien et de l\'anesthésiste);\n-Saignement par les drains >50 ml/10 min ou 2 ml/kg/h (1 ml/kg sur 30min);\n-Retard de fermeture du sternum]]></string>
+    <string name="tv_post_operatoire"><![CDATA[-Saignement par les drains  >50 ml/10 min ou 2 ml/kg/h (1 ml/kg sur 30min);\n-Reprise chirurgicale pour épanchement péricardique\n]]></string>
+    <string name="tv_proposition"><![CDATA[-Hypothermie < 36°C;\n-Hypocalcémie Ca++ < 1,00 mmol/L;\n-Acidose pH < 7.30;\n-Anémie Hb < 8 g/dL (Ht < 24%);\n-Objective PAM > 60 et < 75 mm Hg]]></string>
+
+    <string name="tv_CKR">CKR (min)</string>
+    <string name="tv_CRT_MA">CRT-MA (mm)</string>
+    <string name="tv_CRT_LY30">CRT-LY30 (%)</string>
+    <string name="tv_CK_HEP_R">CK-Hep-R (min)</string>
+    <string name="tv_CFF_MA">CFF-MA (mm)</string>
+
+    <string name="tv_CK">CK</string>
+    <string name="tv_CRT">CRT</string>
+    <string name="tv_CKHEP">CK-Hep</string>
+    <string name="tv_CFF">CFF</string>
+
+    <string name="menu_algorithme">Algorithme</string>
+    <string name="menu_a_propos">À propos</string>
+    <string name="menu_quitter">Quitter</string>
+
+    <string name="btn_vider">Vider</string>
+
+    <string name="tv_version_app"><![CDATA[Application Version : 1.0]]></string>
+    <string name="tv_version_requirement"><![CDATA[System Requirement: Android 4.3]]></string>
+    <string name="tv_version_tuteur"><![CDATA[Tuteur : Jean-Yves MARTIN]]></string>
+    <string name="tv_version_auteur"><![CDATA[Réalisateur : Kévin CLEMENS et Quentin GIBAUD]]></string>
+
+    <string name="mes_nom">Nom de la mesure à relever</string>
+    <string name="mes_valeur">Valeur</string>
+
+</resources>
