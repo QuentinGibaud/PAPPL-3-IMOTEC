@@ -11,17 +11,22 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 /**
- *
- *
+ * Activité permettant l'affichage de l'algorithme
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
 
 public class ActivityAlgo extends AppCompatActivity implements Button.OnClickListener {
 
+    /**
+     * Déclaration des attributs
+     */
     private ImageView btn_algo_rentrer;
 
-    //Affichage de l'algorithme
+    /**
+     * Affichage du layout : arbre de décision
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +38,10 @@ public class ActivityAlgo extends AppCompatActivity implements Button.OnClickLis
         btn_algo_rentrer.setOnClickListener(this);
     }
 
+    /**
+     * Permet de sortir de l'activité
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -42,7 +51,11 @@ public class ActivityAlgo extends AppCompatActivity implements Button.OnClickLis
         }
     }
 
-    //ToolBar Menu initialisation
+    /**
+     * Initialisation de la ToolBar du menu
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -50,18 +63,25 @@ public class ActivityAlgo extends AppCompatActivity implements Button.OnClickLis
         return true;
     }
 
-    //ToolBar Items initialisation
+    /**
+     * Affichage du menu et redirection des activités
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        //Affichage de l'algorithme
         if (id == R.id.action_algorithme) {
             return true;
         }
+        //Affichage des coordonnées utiles
         if (id == R.id.action_a_propos) {
             Intent it = new Intent(ActivityAlgo.this, ActivityVersion.class);
             startActivity(it);
             return true;
         }
+        //Quitter l'application
         if (id == R.id.action_quitter) {
             MyApplication.getInstance().exitApp();
             return true;

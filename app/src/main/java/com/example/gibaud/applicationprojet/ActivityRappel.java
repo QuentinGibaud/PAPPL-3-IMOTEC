@@ -15,22 +15,26 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 /**
- *
- *
+ * Affiche le layout principal avec le choix de période et les informations de rappel avant traitement
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
 
 public class ActivityRappel extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
+    /**
+     * Déclaration des attributs
+     */
     private ImageView btn_enregistre1;
     private RadioGroup radioGroup_periode;
     private TextView tv_periode;
     private TextView tv_imotec;
 
+    /**
+     * Affichage du layout de l'interface d'accueil et choix de période
+     * @param savedInstanceState
+     */
     @Override
-
-    //Affichage du layout de l'interface d'accueil et choix de période
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_rappel);
@@ -54,7 +58,11 @@ public class ActivityRappel extends AppCompatActivity implements RadioGroup.OnCh
 
     }
 
-    //Affichage selon la période choisie
+    /**
+     * Affichage selon la période choisie
+     * @param group
+     * @param checkedId
+     */
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
@@ -67,7 +75,11 @@ public class ActivityRappel extends AppCompatActivity implements RadioGroup.OnCh
         }
     }
 
-    //ToolBar Menu initialisation
+    /**
+     * Initialisation de la ToolBar du menu
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -75,22 +87,29 @@ public class ActivityRappel extends AppCompatActivity implements RadioGroup.OnCh
         return true;
     }
 
-    //ToolBar Items initialisation
+    /**
+     * Affichage du menu et redirection des activités
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_algorithme) {
+            //Affichage de l'arbre de décision
             Intent it = new Intent(ActivityRappel.this, ActivityAlgo.class);
             startActivity(it);
             return true;
         }
         if (id == R.id.action_a_propos) {
+            //Affichage des coordonnées utiles
             Intent it = new Intent(ActivityRappel.this, ActivityVersion.class);
             startActivity(it);
             return true;
         }
         if (id == R.id.action_quitter) {
-//            this.finish();
+            //Sortie de l'application
+            //this.finish();
             MyApplication.getInstance().exitApp();
             return true;
         }

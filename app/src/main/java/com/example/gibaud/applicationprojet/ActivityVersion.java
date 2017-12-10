@@ -11,17 +11,22 @@ import android.view.View;
 import android.widget.ImageView;
 
 /**
- *
- *
+ * Affichage des coordonnées utiles
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
 
 public class ActivityVersion extends AppCompatActivity implements View.OnClickListener{
 
+    /**
+     * Déclaration des attributs
+     */
     ImageView btn_version_rentrer ;
 
-    //Affichage du layout
+    /**
+     * Affichage du layout
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +37,10 @@ public class ActivityVersion extends AppCompatActivity implements View.OnClickLi
         btn_version_rentrer.setOnClickListener(this);
     }
 
+    /**
+     * Sortie de l'activité par appui sur le bouton Retour
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -41,7 +50,11 @@ public class ActivityVersion extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    //ToolBar Menu initialisation
+    /**
+     * Initialisation de la ToolBar du menu
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -49,19 +62,26 @@ public class ActivityVersion extends AppCompatActivity implements View.OnClickLi
         return true;
     }
 
-    //ToolBar Items initialisation
+    /**
+     * Affichage du menu et redirection des activités
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_algorithme) {
+            //Affichage de l'arbre de décision
             Intent it = new Intent(ActivityVersion.this, ActivityAlgo.class);
             startActivity(it);
             return true;
         }
         if (id == R.id.action_a_propos) {
+            //Affichage des coordonnées utiles
             return true;
         }
         if (id == R.id.action_quitter) {
+            //Quitter l'application
             MyApplication.getInstance().exitApp();
             return true;
         }

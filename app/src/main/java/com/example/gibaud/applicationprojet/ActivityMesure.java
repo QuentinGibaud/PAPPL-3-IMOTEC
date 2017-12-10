@@ -16,15 +16,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- *
- *
+ * Implémentation de l'algorithme : valeur à entrer pour parcourir l'arbre de décision
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
 
 public class ActivityMesure extends AppCompatActivity implements TextWatcher, Button.OnClickListener//implements View.OnClickListener
 {
-    //Définition des attributs
+    /**
+     * Définition des attributs
+     */
+
     private ImageView btn_back;
 
     private TextView tv_vider;
@@ -58,6 +60,10 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
     private double crt_ly30;
 
 
+    /**
+     * Affichage du layout des mesures
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +71,10 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
 
         MyApplication.getInstance().addActivity(this);
 
-        //Initialisation des vues
+        /**
+         * Initialisation des vues
+         */
+
         btn_back = (ImageView) findViewById(R.id.btn_back);
 
         tv_vider = (TextView) findViewById(R.id.tv_vider);
@@ -108,7 +117,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         et_cff_ma = (EditText) findViewById(R.id.et_cff_ma);
         et_crt_ly30 = (EditText) findViewById(R.id.et_crt_ly30);
 
-        //Initialisation des events
+        /**
+         *Initialisation des events
+         */
         btn_back.setOnClickListener(this);
         tv_vider.setOnClickListener(this);
 
@@ -122,6 +133,10 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         tv_nb_proposition.setText(Integer.toString(nb_proposition));
     }
 
+    /**
+     * Affichage et gestion des callbacks des boutons
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -139,23 +154,39 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         }
     }
 
+    /**
+     * Effectuer le calcul de l'arbre de décision en temps réel
+     * @param s
+     * @param start
+     * @param before
+     * @param count
+     */
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
     }
 
+    /**
+     * à effectuer avant de changer les entrées
+     * @param s
+     * @param start
+     * @param count
+     * @param after
+     */
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count,
                                   int after) {
     }
 
     /**
-     * Implémentation de l'algorithme
+     * Implémentation de l'algorithme/arbre de décision
      * @param s
      */
     @Override
     public void afterTextChanged(Editable s) {
         int nb_proposition = 0;
-        //Protamine
+        /**
+         * Traitement à la protamine
+         */
         if ((et_ckr.getText().length() > 0) && (et_ck_hep_r.getText().length() > 0)) {
             ckr = Double.valueOf(et_ckr.getText().toString());
             ck_hep_r = Double.valueOf(et_ck_hep_r.getText().toString());
@@ -171,7 +202,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             cb_protamine.setVisibility(View.GONE);
         }
 
-        //Transfusion plaquettaire
+        /**
+         * Traitement par transfusion plaquettaire
+         */
         if ((et_crt_ma.getText().length() > 0) && (et_cff_ma.getText().length() > 0)) {
             crt_ma = Double.valueOf(et_crt_ma.getText().toString());
             cff_ma = Double.valueOf(et_cff_ma.getText().toString());
@@ -187,7 +220,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             cb_tp.setVisibility(View.GONE);
         }
 
-        //Fibrinogène
+        /**
+         * Traitement par fibrinogène
+         */
         if ((et_crt_ma.getText().length() > 0) && (et_cff_ma.getText().length() > 0)) {
             crt_ma = Double.valueOf(et_crt_ma.getText().toString());
             cff_ma = Double.valueOf(et_cff_ma.getText().toString());
@@ -204,7 +239,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         }
 
 
-        //Plasma et CCP
+        /**
+         * Traitement par plasma et ccp
+         */
         if ((et_ckr.getText().length() > 0) && (et_ck_hep_r.getText().length() > 0)) {
             ckr = Double.valueOf(et_ckr.getText().toString());
             ck_hep_r = Double.valueOf(et_ck_hep_r.getText().toString());
@@ -220,7 +257,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             cb_plasma_ccp.setVisibility(View.GONE);
         }
 
-        //Acide Tranexamique
+        /**
+         * Traitement par acide trenaxémique
+         */
         if (et_crt_ly30.getText().length() > 0) {
             crt_ly30 = Double.valueOf(et_crt_ly30.getText().toString());
             if (crt_ly30 > 3) {
@@ -235,7 +274,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             cb_acide.setVisibility(View.GONE);
         }
 
-        //Tests normaux
+        /**
+         * Tests normaux
+         */
         if (nb_proposition == 0){
             tv_tests_normaux.setVisibility(View.VISIBLE);
             tv_tests_normaux_detail.setVisibility(View.VISIBLE);
@@ -245,9 +286,13 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             tv_tests_normaux_detail.setVisibility(View.GONE);
         }
 
-        //Affichage hors des valeurs normales
+        /**
+         * Affichages hors des valeurs normales
+         */
 
-        //CKR
+        /**
+         * CKR
+         */
         if (et_ckr.getText().length() >0){
             ckr = Double.valueOf(et_ckr.getText().toString());
             if (ckr <= 4.6 || ckr >= 9.1){
@@ -259,7 +304,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             tv_ckr.setVisibility(View.GONE);
         }
 
-        //CRT-MA
+        /**
+         * CRT-MA
+         */
         if (et_crt_ma.getText().length() >0){
             crt_ma = Double.valueOf(et_crt_ma.getText().toString());
             if (crt_ma <= 52 || crt_ma >= 70){
@@ -271,7 +318,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             tv_crtma.setVisibility(View.GONE);
         }
 
-        //CRT-LY30
+        /**
+         * CRT-LY30
+         */
         if (et_crt_ly30.getText().length() >0){
             crt_ly30 = Double.valueOf(et_crt_ly30.getText().toString());
             if ( crt_ly30 >= 2.2){
@@ -283,7 +332,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             tv_crtly30.setVisibility(View.GONE);
         }
 
-        //CK-Hep-R
+        /**
+         * CK-Hep-R
+         */
         if (et_ck_hep_r.getText().length() >0){
             ck_hep_r = Double.valueOf(et_ck_hep_r.getText().toString());
             if (ck_hep_r <= 4.3 || ck_hep_r >= 8.3){
@@ -295,7 +346,9 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
             tv_ckhepr.setVisibility(View.GONE);
         }
 
-        //CFF-MA
+        /**
+         * CFF-MA
+         */
         if (et_cff_ma.getText().length() >0){
             cff_ma = Double.valueOf(et_cff_ma.getText().toString());
             if (cff_ma <= 15 || cff_ma >= 32){
@@ -310,7 +363,11 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         tv_nb_proposition.setText(Integer.toString(nb_proposition));
     }
 
-    //ToolBar Menu initialisation
+    /**
+     * Initialisation de la ToolBar du menu
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -318,21 +375,28 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         return true;
     }
 
-    //ToolBar Items initialisation
+    /**
+     * Affichage du menu et redirection des activités
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_algorithme) {
+            //Affichage de l'arbre de décision
             Intent it = new Intent(ActivityMesure.this, ActivityAlgo.class);
             startActivity(it);
             return true;
         }
         if (id == R.id.action_a_propos) {
+            //Affichage des coordonnées utiles
             Intent it = new Intent(ActivityMesure.this, ActivityVersion.class);
             startActivity(it);
             return true;
         }
         if (id == R.id.action_quitter) {
+            //Quitter l'application
             MyApplication.getInstance().exitApp();
             return true;
         }

@@ -13,14 +13,17 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.ImageView;
 
 /**
- *
- *
+ * Gère la fonction de zoom sur l'arbre de décision
+ * Classe reprise de la précedente version
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
 
-public class MyZoomImageView extends ImageView {
+public class MyZoomImageView extends android.support.v7.widget.AppCompatImageView {
 
+    /**
+     * Déclaration des attributs
+     */
     //Taille de l'image
     private int imgHeight;
     private int imgWidth;
@@ -35,16 +38,31 @@ public class MyZoomImageView extends ImageView {
     private int intervalTime = 250;
     private PointF firstPointF;
 
+    /**
+     * Constructeur à 1 paramètre
+     * @param context , le layout de base
+     */
     public MyZoomImageView(Context context) {
         super(context);
         initUI();
     }
 
+    /**
+     * Constructeur à 2 paramètres
+     * @param context , le layout de base
+     * @param attrs , attribut de mise à l'échelle
+     */
     public MyZoomImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initUI();
     }
 
+    /**
+     * Constructeur à 3 paramètres
+     * @param context
+     * @param attrs
+     * @param defStyle
+     */
     public MyZoomImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         // TODO Auto-generated constructor stub
@@ -73,6 +91,9 @@ public class MyZoomImageView extends ImageView {
         intrinsicWidth = drawable.getIntrinsicWidth();
     }
 
+    /**
+     * Gère le zoom avec les doigts
+     */
     private final class TouchListener implements OnTouchListener {
 
 
@@ -164,7 +185,7 @@ public class MyZoomImageView extends ImageView {
         }
 
         /**
-         *
+         * Limites de l'écran en ordonnée
          * @param values
          * @param dy
          * @return
@@ -184,7 +205,7 @@ public class MyZoomImageView extends ImageView {
         }
 
         /**
-         *
+         * Limites de l'écran en abscisse
          * @param values
          * @param dx
          * @return
@@ -204,7 +225,7 @@ public class MyZoomImageView extends ImageView {
         }
 
         /**
-         *
+         * Mettre à l'échelle
          * @param scale
          * @param values
          * @return
@@ -218,7 +239,7 @@ public class MyZoomImageView extends ImageView {
         }
 
         /**
-         *
+         * Centrer l'image
          * @param values
          *
          */
@@ -292,7 +313,7 @@ public class MyZoomImageView extends ImageView {
     }
 
     /**
-     *
+     * Gérer les évenements
      * @param event
      */
     private void setDoubleTouchEvent(MotionEvent event) {
