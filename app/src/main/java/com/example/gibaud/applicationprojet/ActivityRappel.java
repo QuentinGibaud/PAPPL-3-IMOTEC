@@ -15,7 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 /**
- * Affiche le layout principal avec le choix de période et les informations de rappel avant traitement
+ * Affiche le layout principal avec le choix de periode et les informations de rappel avant traitement
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
@@ -23,7 +23,7 @@ import android.widget.TextView;
 public class ActivityRappel extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     /**
-     * Déclaration des attributs
+     * Declaration des attributs
      */
     private ImageView btn_enregistre1;
     private RadioGroup radioGroup_periode;
@@ -31,7 +31,7 @@ public class ActivityRappel extends AppCompatActivity implements RadioGroup.OnCh
     private TextView tv_imotec;
 
     /**
-     * Affichage du layout de l'interface d'accueil et choix de période
+     * Affichage du layout de l'interface d'accueil et choix de periode
      * @param savedInstanceState
      */
     @Override
@@ -59,7 +59,7 @@ public class ActivityRappel extends AppCompatActivity implements RadioGroup.OnCh
     }
 
     /**
-     * Affichage selon la période choisie
+     * Affichage selon la periode choisie
      * @param group
      * @param checkedId
      */
@@ -88,7 +88,7 @@ public class ActivityRappel extends AppCompatActivity implements RadioGroup.OnCh
     }
 
     /**
-     * Affichage du menu et redirection des activités
+     * Affichage du menu et redirection des activites
      * @param item
      * @return
      */

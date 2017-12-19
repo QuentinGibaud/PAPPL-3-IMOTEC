@@ -7,7 +7,7 @@ import android.app.Activity;
 import android.app.Application;
 
 /**
- * Activité principal : permet de lancer et de fermer l'application
+ * Activite principal : permet de lancer et de fermer l'application
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
@@ -17,13 +17,13 @@ public class MyApplication extends Application {
 
 
     /**
-     * Déclaration des attributs
+     * Declaration des attributs
      */
     private List<Activity> activityList = new LinkedList<Activity>(); //liste des activités que l'on peut lancer
     private static MyApplication instance; //accès au R
 
     /**
-     * Constructeur sans paramètres
+     * Constructeur sans parametres
      */
     private MyApplication() {
     }
@@ -41,8 +41,8 @@ public class MyApplication extends Application {
 
 
     /**
-     * Permet de gérer l'ensemble des activités
-     * Permet de lancer les différentes activités
+     * Permet de gerer l'ensemble des activites
+     * Permet de lancer les differentes activites
      * @param activity
      */
     public void addActivity(Activity activity) {
@@ -51,7 +51,7 @@ public class MyApplication extends Application {
 
 
     /**
-     * Permet de quitter l'application en fermant l'activité principale
+     * Permet de quitter l'application en fermant l'activite principale
      */
     public void exitApp() {
         for (Activity activity : activityList) {
@@ -63,7 +63,7 @@ public class MyApplication extends Application {
 
 
     /**
-     * Permet de gérer un espace mémoire trop faible pour l'application
+     * Permet de gerer un espace mémoire trop faible pour l'application
      */
     @Override
     public void onLowMemory() {

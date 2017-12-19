@@ -13,8 +13,8 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.ImageView;
 
 /**
- * Gère la fonction de zoom sur l'arbre de décision
- * Classe reprise de la précedente version
+ * Gere la fonction de zoom sur l'arbre de decision
+ * Classe reprise de la precedente version
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
@@ -22,14 +22,14 @@ import android.widget.ImageView;
 public class MyZoomImageView extends android.support.v7.widget.AppCompatImageView {
 
     /**
-     * Déclaration des attributs
+     * Declaration des attributs
      */
     //Taille de l'image
     private int imgHeight;
     private int imgWidth;
     private int intrinsicHeight;
     private int intrinsicWidth;
-    //Mise à l'échelle
+    //Mise à l'echelle
     private float mMaxScale = 1.8f;
     private float mMinScale = 0.30f;
     private Matrix matrix = new Matrix();
@@ -39,7 +39,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
     private PointF firstPointF;
 
     /**
-     * Constructeur à 1 paramètre
+     * Constructeur à 1 parametre
      * @param context , le layout de base
      */
     public MyZoomImageView(Context context) {
@@ -48,7 +48,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
     }
 
     /**
-     * Constructeur à 2 paramètres
+     * Constructeur à 2 parametres
      * @param context , le layout de base
      * @param attrs , attribut de mise à l'échelle
      */
@@ -58,7 +58,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
     }
 
     /**
-     * Constructeur à 3 paramètres
+     * Constructeur à 3 parametres
      * @param context
      * @param attrs
      * @param defStyle
@@ -82,7 +82,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
     }
 
     /**
-     * Mise à l'échelle
+     * Mise à l'echelle
      */
     private void getIntrinsicWidthHeight() {
         Drawable drawable = this.getDrawable();
@@ -92,7 +92,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
     }
 
     /**
-     * Gère le zoom avec les doigts
+     * Gere le zoom avec les doigts
      */
     private final class TouchListener implements OnTouchListener {
 
@@ -185,7 +185,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
         }
 
         /**
-         * Limites de l'écran en ordonnée
+         * Limites de l'ecran en ordonnee
          * @param values
          * @param dy
          * @return
@@ -205,7 +205,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
         }
 
         /**
-         * Limites de l'écran en abscisse
+         * Limites de l'ecran en abscisse
          * @param values
          * @param dx
          * @return
@@ -225,7 +225,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
         }
 
         /**
-         * Mettre à l'échelle
+         * Mettre à l'echelle
          * @param scale
          * @param values
          * @return
@@ -313,7 +313,7 @@ public class MyZoomImageView extends android.support.v7.widget.AppCompatImageVie
     }
 
     /**
-     * Gérer les évenements
+     * Gerer les evenements
      * @param event
      */
     private void setDoubleTouchEvent(MotionEvent event) {

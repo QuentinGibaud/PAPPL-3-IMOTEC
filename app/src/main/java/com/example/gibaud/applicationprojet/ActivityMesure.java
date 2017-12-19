@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Implémentation de l'algorithme : valeur à entrer pour parcourir l'arbre de décision
+ * Implementation de l'algorithme : valeur à entrer pour parcourir l'arbre de decision
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
@@ -24,35 +24,42 @@ import android.widget.TextView;
 public class ActivityMesure extends AppCompatActivity implements TextWatcher, Button.OnClickListener//implements View.OnClickListener
 {
     /**
-     * Définition des attributs
+     * Definition des attributs
      */
 
+    //Bouton retour
     private ImageView btn_back;
 
+    //Bouton vider
     private TextView tv_vider;
 
+    //Textes de tests normaux et layout fixe
     private TextView tv_tests_normaux;
     private TextView tv_tests_normaux_detail;
     private TextView tv_nb_proposition;
 
+    //Textes des constantes physiologiques
     private TextView tv_ckr;
     private TextView tv_crtma;
     private TextView tv_crtly30;
     private TextView tv_ckhepr;
     private TextView tv_cffma;
 
+    //Affichage des traitements
     private CheckBox cb_protamine;
     private CheckBox cb_tp;
     private CheckBox cb_fibrinogene;
     private CheckBox cb_plasma_ccp;
     private CheckBox cb_acide;
 
+    //Champs d'entrées des valeurs
     private EditText et_ckr;
     private EditText et_ck_hep_r;
     private EditText et_crt_ma;
     private EditText et_cff_ma;
     private EditText et_crt_ly30;
 
+    //Transformation des valeurs d'entrées en réel
     private double ckr;
     private double ck_hep_r;
     private double crt_ma;
@@ -155,7 +162,7 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
     }
 
     /**
-     * Effectuer le calcul de l'arbre de décision en temps réel
+     * Effectuer le calcul de l'arbre de decision en temps reel
      * @param s
      * @param start
      * @param before
@@ -166,7 +173,7 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
     }
 
     /**
-     * à effectuer avant de changer les entrées
+     * a effectuer avant de changer les entrees
      * @param s
      * @param start
      * @param count
@@ -178,18 +185,20 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
     }
 
     /**
-     * Implémentation de l'algorithme/arbre de décision
+     * Implementation de l'algorithme/arbre de decision
      * @param s
      */
     @Override
     public void afterTextChanged(Editable s) {
         int nb_proposition = 0;
         /**
-         * Traitement à la protamine
+         * Traitement a la protamine
          */
-        if ((et_ckr.getText().length() > 0) && (et_ck_hep_r.getText().length() > 0)) {
+        if ((et_ckr.getText().length() > 0) && (et_ck_hep_r.getText().length() > 0)) { //vérifie que le champs à été complété
+            //transforme la valeur en réel
             ckr = Double.valueOf(et_ckr.getText().toString());
             ck_hep_r = Double.valueOf(et_ck_hep_r.getText().toString());
+            //condition de l'arbre de décision
             if (ck_hep_r <= ckr * 2) {
                 cb_protamine.setVisibility(View.VISIBLE);
                 nb_proposition++;
@@ -205,9 +214,11 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         /**
          * Traitement par transfusion plaquettaire
          */
-        if ((et_crt_ma.getText().length() > 0) && (et_cff_ma.getText().length() > 0)) {
+        if ((et_crt_ma.getText().length() > 0) && (et_cff_ma.getText().length() > 0)) { //vérifie que le champs à été complété
+            //transforme la valeur en réel
             crt_ma = Double.valueOf(et_crt_ma.getText().toString());
             cff_ma = Double.valueOf(et_cff_ma.getText().toString());
+            //condition de l'arbre de décision
             if (crt_ma < 48 && cff_ma > 16) {
                 cb_tp.setVisibility(View.VISIBLE);
                 nb_proposition++;
@@ -223,9 +234,11 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         /**
          * Traitement par fibrinogène
          */
-        if ((et_crt_ma.getText().length() > 0) && (et_cff_ma.getText().length() > 0)) {
+        if ((et_crt_ma.getText().length() > 0) && (et_cff_ma.getText().length() > 0)) { //vérifie que le champs à été complété
+            //transforme la valeur en réel
             crt_ma = Double.valueOf(et_crt_ma.getText().toString());
             cff_ma = Double.valueOf(et_cff_ma.getText().toString());
+            //condition de l'arbre de décision
             if (crt_ma > 47 && cff_ma < 17) {
                 cb_fibrinogene.setVisibility(View.VISIBLE);
                 nb_proposition++;
@@ -242,9 +255,11 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         /**
          * Traitement par plasma et ccp
          */
-        if ((et_ckr.getText().length() > 0) && (et_ck_hep_r.getText().length() > 0)) {
+        if ((et_ckr.getText().length() > 0) && (et_ck_hep_r.getText().length() > 0)) { //vérifie que le champs à été complété
+            //transforme la valeur en réel
             ckr = Double.valueOf(et_ckr.getText().toString());
             ck_hep_r = Double.valueOf(et_ck_hep_r.getText().toString());
+            //condition de l'arbre de décision
             if (ckr > 10 && ck_hep_r > 10) {
                 cb_plasma_ccp.setVisibility(View.VISIBLE);
                 nb_proposition++;
@@ -260,8 +275,10 @@ public class ActivityMesure extends AppCompatActivity implements TextWatcher, Bu
         /**
          * Traitement par acide trenaxémique
          */
-        if (et_crt_ly30.getText().length() > 0) {
+        if (et_crt_ly30.getText().length() > 0) { //vérifie que le champs à été complété
+            //transforme la valeur en réel
             crt_ly30 = Double.valueOf(et_crt_ly30.getText().toString());
+            //condition de l'arbre de décision
             if (crt_ly30 > 3) {
                 cb_acide.setVisibility(View.VISIBLE);
                 nb_proposition++;

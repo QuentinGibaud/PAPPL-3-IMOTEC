@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 /**
- * Affichage des coordonnées utiles
+ * Affichage des coordonnees utiles
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
@@ -19,7 +19,7 @@ import android.widget.ImageView;
 public class ActivityVersion extends AppCompatActivity implements View.OnClickListener{
 
     /**
-     * Déclaration des attributs
+     * Declaration des attributs
      */
     ImageView btn_version_rentrer ;
 
@@ -38,7 +38,7 @@ public class ActivityVersion extends AppCompatActivity implements View.OnClickLi
     }
 
     /**
-     * Sortie de l'activité par appui sur le bouton Retour
+     * Sortie de l'activite par appui sur le bouton Retour
      * @param v
      */
     @Override
@@ -63,7 +63,7 @@ public class ActivityVersion extends AppCompatActivity implements View.OnClickLi
     }
 
     /**
-     * Affichage du menu et redirection des activités
+     * Affichage du menu et redirection des activites
      * @param item
      * @return
      */

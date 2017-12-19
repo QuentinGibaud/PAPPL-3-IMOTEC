@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 /**
- * Activité permettant l'affichage de l'algorithme
+ * Activite permettant l'affichage de l'algorithme
  * @author Quentin GIBAUD, Kevin CLEMENS
  *
  */
@@ -19,12 +19,12 @@ import android.widget.ImageView;
 public class ActivityAlgo extends AppCompatActivity implements Button.OnClickListener {
 
     /**
-     * Déclaration des attributs
+     * Declaration des attributs
      */
     private ImageView btn_algo_rentrer;
 
     /**
-     * Affichage du layout : arbre de décision
+     * Affichage du layout : arbre de decision
      * @param savedInstanceState
      */
     @Override
@@ -39,7 +39,7 @@ public class ActivityAlgo extends AppCompatActivity implements Button.OnClickLis
     }
 
     /**
-     * Permet de sortir de l'activité
+     * Permet de sortir de l'activite
      * @param v
      */
     @Override
@@ -64,7 +64,7 @@ public class ActivityAlgo extends AppCompatActivity implements Button.OnClickLis
     }
 
     /**
-     * Affichage du menu et redirection des activités
+     * Affichage du menu et redirection des activites
      * @param item
      * @return
      */
