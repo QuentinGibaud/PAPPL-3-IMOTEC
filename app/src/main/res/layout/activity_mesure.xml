@@ -253,27 +253,27 @@
 
             <TextView
                 android:id="@+id/tv_ckr"
-                style="@style/style_tv_result"
+                style="@style/style_out_of_range"
                 android:text="@string/str_ckr" />
 
             <TextView
                 android:id="@+id/tv_crtma"
-                style="@style/style_tv_result"
+                style="@style/style_out_of_range"
                 android:text="@string/str_crtma" />
 
             <TextView
                 android:id="@+id/tv_crtly30"
-                style="@style/style_tv_result"
+                style="@style/style_out_of_range"
                 android:text="@string/str_crtly30" />
 
             <TextView
                 android:id="@+id/tv_ckhepr"
-                style="@style/style_tv_result"
+                style="@style/style_out_of_range"
                 android:text="@string/str_ckhepr" />
 
             <TextView
                 android:id="@+id/tv_cffma"
-                style="@style/style_tv_result"
+                style="@style/style_out_of_range"
                 android:text="@string/str_cffma" />
 
         </LinearLayout>

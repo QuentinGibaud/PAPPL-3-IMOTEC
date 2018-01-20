@@ -25,4 +25,6 @@
     <color name="colorCoorNom">#000000</color>
     <color name="colorCoor">#000000</color>
 
+    <color name="colorOutOfRange">#CC7711</color>
+
 </resources>
